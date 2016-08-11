@@ -2,12 +2,18 @@ require 'airport'
 
 describe Airport do
 
-  subject(:airport) { described_class.new }
+  subject(:airport) { described_class.new(20) }
   it 'instructs a plane to land' do
     expect(airport).to respond_to(:land).with(1).argument
   end
 
   it 'instructs a plane to take off' do
     expect(airport).to respond_to(:take_off).with(1).argument
+  end
+
+  it 'does not allow a plane to land when at capacity' do
+    plane = double :plane
+    20.times { airport.land(plane) }
+    expect { airport.land(plane) }.to raise_error "Cannot land plane: airport full"
   end
 end
