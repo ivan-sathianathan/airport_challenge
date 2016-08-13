@@ -16,7 +16,6 @@ describe Plane do
     it 'stores the airport the plane landed at' do
       expect(plane.land(airport)).to eq airport
     end
-    it { is_expected.to respond_to(:land).with(1).argument }
 
     it 'raises an error if already landed' do
       plane.land(airport)
