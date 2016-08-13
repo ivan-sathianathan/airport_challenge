@@ -47,20 +47,25 @@ To run this project, perform the following Steps
 1. Clone this repo
 2. Run ```bundle```
 3. Instantiate a Weather Reporter and pass this to a new Airport
+
   ```
   weather_reporter = WeatherReporter.new
   airport = Airport.new(weather_reporter)
   ```
+
 4. Instantiate a new Plane object. This plane will already be flying so ask the airport to land this plane
+
   ```
   plane = Plane.new
   airport.land(plane)
   ```
+
 5. Ask the airport to take off the plane. This will happen depending on whether the weather reporter determines it to be stormy or not.
 
   ```
   airport.take_off(plane)
   ```
+  
 More documentation on the behaviour of each class and their methods can be found by running ```rspec```
 
 ```
